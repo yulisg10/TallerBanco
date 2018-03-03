@@ -1,0 +1,121 @@
+
+<!DOCTYPE >
+
+<html lang="es" ng-app="banco">
+<head>
+	<meta charset="utf-8 " >
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Banco</title>
+
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+
+
+	<section class="container">
+
+		<header class="page-header">
+			<h2>Movimientos Cliente</h2>
+		</header>
+		<br/><br/>
+
+		<!--Formulario-->
+		<form class="form-horizontal">
+
+			<div class="form-group">
+				<label for="#" class="col-sm-2 control-label">Nombre Movimiento:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="nombre" placeholder="Nombre Movimiento">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="#" class="col-sm-2 control-label">Tipo Movimiento:</label>
+				<div class="col-sm-10">
+					<select id="#" class="form-control">
+						<option>...</option>
+						<option>Domiciliación de nómina o pensión</option>
+						<option>Transferencias recibidas</option>
+						<option>Liquidación de intereses</option>
+						<option>Ingreso de efectivo</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="#">Valor Movimiento:</label>
+				<div class="col-sm-10">
+					<div class="input-group">
+						<div class="input-group-addon">$</div>
+						<input type="text" class="form-control" id="valor" placeholder="Valor Movimiento">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary pos-der">Crear Movimiento</button>
+				</div>
+			</div>
+
+		</form>
+
+		<br/><br/>
+		<section>
+			<!--Table-->
+			<table class="table table-bordered"  ng-controller="BancoController as banco">
+
+				<!--Table head-->
+				<thead>
+					<tr>
+						<th>Nombre Movimiento</th>
+						<th>Tipo Movimiento</th>
+						<th>Valor Movimiento</th>
+						<th>Fecha Registro</th>
+						<th>Acción</th>
+					</tr>
+				</thead>
+				<!--Table head-->
+
+				<!--Table body-->
+				<tbody ng-repeat="movimiento in banco.movimientos">
+					<tr>
+						<td>{{movimiento.STR_NOMBRE_MOVIMIENTO}}</td>
+						<td>{{movimiento.STR_NOMBRE_MOVIMIENTO}}</td>
+						<td>{{movimiento.NUM_VALOR_MOVIMIENTO}}</td>
+						<td>{{movimiento.DTM_FECHA_REGISTRO}}</td>
+						<td id ="eliminar"> <button type="button" class="btn btn-primary btn-rounded btn-sm my-0">Eliminar</button></td>
+					</tr>
+<!--
+					<tr>
+						<th scope="row"></th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><button type="button" class="btn btn-primary btn-rounded btn-sm my-0">Eliminar</button></td>
+					</tr>
+					<tr>
+						<th scope="row"></th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><button type="button" class="btn btn-primary btn-rounded btn-sm my-0">Eliminar</button></td>
+					</tr>
+-->
+				</tbody>
+				<!--Table body-->
+
+			</table>
+			<!--Table-->
+		</section>
+		{{"Hola" + "Mundo"}}
+	</section>
+
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	
+</body>
+
+</html>
